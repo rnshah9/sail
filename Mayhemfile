@@ -1,0 +1,7 @@
+project: rnshah9/sail
+target: sail
+tests: null
+
+cmds:
+  - cmd: /repo/build/examples/c/sail/sail convert @@ out.ico
+    filepath: /test.bmp

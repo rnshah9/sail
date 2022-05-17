@@ -1,0 +1,14 @@
+# Build Stage
+FROM --platform=linux/amd64 ubuntu:20.04 as builder
+
+## Install build dependencies.
+RUN apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y vim less man wget tar git gzip unzip make cmake software-properties-common curl
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y devscripts
+
+ADD . /repo
+# RUN mk-build-deps --install --tool='apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends --yes' /repo/debian/control
+WORKDIR /repo/build
+RUN cmake ..
+RUN make -j8
+RUN make install
