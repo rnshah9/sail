@@ -18,5 +18,6 @@ RUN ldd /repo/build/examples/c/sail/sail | tr -s '[:blank:]' '\n' | grep '^/' | 
 FROM ubuntu:20.04 as package
 
 COPY --from=builder /deps /deps
+COPY --from=builder /usr/local/lib/sail /usr/local/lib/sail
 COPY --from=builder /repo/build/examples/c/sail/sail /repo/build/examples/c/sail/sail
 ENV LD_LIBRARY_PATH=/deps
