@@ -5,3 +5,4 @@ testsuite:
 
 cmds:
   - cmd: /install/bin/sail convert @@ /dev/null
+    filepath: /test.bmp
