@@ -4,5 +4,4 @@ testsuite:
   - file://tests/images/bmp
 
 cmds:
-  - cmd: /repo/build/examples/c/sail/sail convert /test.bmp /dev/null
-    filepath: /test.bmp
+  - cmd: /install/bin/sail convert @@ /dev/null
